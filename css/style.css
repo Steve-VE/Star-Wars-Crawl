@@ -13,9 +13,9 @@ body{
     height: 100vh;
 
     background-color: black;
-    background-image: url("../img/space.jpg");
     
-    font-family: sans-serif;
+    
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     
     overflow: hidden;
     cursor: none;
@@ -35,6 +35,58 @@ body{
     opacity: 0;
 }
 
+
+h1{
+    position: fixed;
+    top: 20vh;
+    width: 100%;
+
+    font-family: "Star Wars";
+    text-shadow:    0.2vw 0px orange,
+                    -0.2vw 0px orange,
+                    0px 0.2vw orange,
+                    0px -0.2vw orange,
+                    -0.2vw 0.2vw orange,
+                    -0.2vw -0.2vw orange,
+                    0.2vw -0.2vw orange,
+                    0.2vw 0.2vw orange;
+    font-size: 18vw;
+    text-align: center;
+    opacity: 0;
+
+    animation: byebye 13s linear;
+    animation-delay: 10s;
+}
+
+#content{
+    width: 60%;
+    margin: 0 auto;
+
+    font-size: 48px;
+    text-align: justify;
+    color: orange;
+
+    opacity: 0;
+
+    animation: crawling 20s;
+    animation-timing-function: linear;
+    animation-delay: 17s;
+}
+
+#skybox{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    left: 0;
+
+    background-image: url("../img/space.jpg");
+    /* opacity: 0; */
+
+    animation: space 11s;
+    /* animation-delay: 10s; */
+}
+
 @keyframes fade-out{
     0%{
         opacity: 0;
@@ -50,6 +102,17 @@ body{
     }
     100%{
         opacity: 0;
+    }
+}
+@keyframes space{
+    0%{
+        opacity: 0;
+    }
+    90%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 100;
     }
 }
 @keyframes crawling{
@@ -69,40 +132,47 @@ body{
                     translateY(-10000px);
     }
 }
-
-h1{
-    position: fixed;
-    width: fit-content;
-    /* margin: 20vh auto; */
-    /* left: 10vw;
-    top: 20vh; */
-
-    transform-origin: 100%;
-    transform: translate(50%, 50%);
-    font-family: "Star Wars";
-    text-shadow:    0.2vw 0px orange,
-                    -0.2vw 0px orange,
-                    0px 0.2vw orange,
-                    0px -0.2vw orange,
-                    -0.2vw 0.2vw orange,
-                    -0.2vw -0.2vw orange,
-                    0.2vw -0.2vw orange,
-                    0.2vw 0.2vw orange;
-    font-size: 18vw;
+@keyframes byebye{
+    0%{
+        opacity: 0;
+        transform: perspective(100px) translateZ(0px);
+        text-shadow:    1vw 0px orange,
+                    -1vw 0px orange,
+                    0px 1vw orange,
+                    0px -1vw orange,
+                    -1vw 1vw orange,
+                    -1vw -1vw orange,
+                    1vw -1vw orange,
+                    1vw 1vw orange;
+    }
+    2%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.2;
+        text-shadow:    1vw 0px white,
+                    -1vw 0px white,
+                    0px 1vw white,
+                    0px -1vw white,
+                    -1vw 1vw white,
+                    -1vw -1vw white,
+                    1vw -1vw white,
+                    1vw 1vw white;
+    }
+    100%{
+        opacity: 0;
+        transform: perspective(100px) translateZ(-2000px);
+        text-shadow:    1vw 0px white,
+                    -1vw 0px white,
+                    0px 1vw white,
+                    0px -1vw white,
+                    -1vw 1vw white,
+                    -1vw -1vw white,
+                    1vw -1vw white,
+                    1vw 1vw white;
+    }
 }
-#content{
-    width: 60%;
-    margin: 0 auto;
 
-    font-size: 48px;
-    text-align: justify;
-    color: orange;
-
-    animation: crawling 20s;
-    animation-timing-function: linear;
-
-    opacity: 0;
-}
 
 
 
