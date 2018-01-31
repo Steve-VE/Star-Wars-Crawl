@@ -1,0 +1,108 @@
+@font-face{
+    font-family: "Star Wars";
+    src: url("../fonts/STJEDISE.ttf");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+
+    background-color: black;
+    background-image: url("../img/space.jpg");
+    
+    font-family: sans-serif;
+    
+    overflow: hidden;
+    cursor: none;
+    pointer-events: none;
+}
+
+#intro{
+    position: fixed;
+    top: 40vh;
+    left: 25vw;
+
+    width: 50vw;
+    font-size: 2.5vw;
+    color: darkcyan;
+
+    animation: fade-out 10s;
+    opacity: 0;
+}
+
+@keyframes fade-out{
+    0%{
+        opacity: 0;
+    }
+    20%{
+        opacity: 0;
+    }
+    40%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes crawling{
+    0%{
+        opacity: 1;
+        transform:  perspective(5px) 
+                    rotateX(0.5deg)
+                    translateY(1000px);
+    }
+    60%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+        transform:  perspective(5px) 
+                    rotateX(0.5deg)
+                    translateY(-10000px);
+    }
+}
+
+h1{
+    position: fixed;
+    width: fit-content;
+    /* margin: 20vh auto; */
+    /* left: 10vw;
+    top: 20vh; */
+
+    transform-origin: 100%;
+    transform: translate(50%, 50%);
+    font-family: "Star Wars";
+    text-shadow:    0.2vw 0px orange,
+                    -0.2vw 0px orange,
+                    0px 0.2vw orange,
+                    0px -0.2vw orange,
+                    -0.2vw 0.2vw orange,
+                    -0.2vw -0.2vw orange,
+                    0.2vw -0.2vw orange,
+                    0.2vw 0.2vw orange;
+    font-size: 18vw;
+}
+#content{
+    width: 60%;
+    margin: 0 auto;
+
+    font-size: 48px;
+    text-align: justify;
+    color: orange;
+
+    animation: crawling 20s;
+    animation-timing-function: linear;
+
+    opacity: 0;
+}
+
+
+
